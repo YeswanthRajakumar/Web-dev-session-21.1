@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>blog app </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    />
+    <style>
+      body {
+        padding: 2rem 0rem;
+      }
+​
+      .card-img {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+​
+      .card-title {
+        margin-bottom: 0.3rem;
+      }
+​
+      .cat {
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+​
+      .fa-users {
+        margin-left: 1rem;
+      }
+​
+      .card-footer {
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+      <div class="row">
+        
+
+
+
+
+        {% for food in foods  %}
+          {% if food.status != "Delivered" %}
+        
+        <div class="col-12 col-sm-8 col-md-3 col-lg-4 mt-5">
+          <div class="card">
+            <img
+              class="card-img"
+              src={{food.food_image}}
+              alt="Bologna"
+            />
+            <div class="card-img-overlay">
+              <a href="#" class="btn btn-light btn-sm">{{food.status}}</a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">{{food.food_name}}</h4>
+              <small class="text-muted cat">
+                <i class="far fa-clock text-info"></i> 30 minutes
+                <i class="fas fa-users text-info"></i> 4 portions
+              </small>
+              <p class="card-text">
+                {{food.food_description}}
+              </p>
+              <a href="#" class="btn btn-info">Read Recipe</a>
+            </div>
+            <div
+              class="
+                card-footer
+                text-muted
+                d-flex
+                justify-content-between
+                bg-transparent
+                border-top-0
+              "
+            >
+              <div class="views">Oct 20, 12:45PM</div>
+              <div class="stats">
+                <i class="far fa-eye"></i> 1347
+                <i class="far fa-comment"></i>{{food.comments}}
+              </div>
+            </div>
+          </div>
+        </div>
+         {% endif %}
+        {% endfor%}
+
+
+
+
+      </div>
+    </div>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

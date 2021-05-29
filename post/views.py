@@ -1,11 +1,18 @@
 from django.shortcuts import render
-
 from django.http.response import HttpResponse
-# Create your views here.
+from foodDB import foodData
 
 def getPostsList(request):
-    return HttpResponse("<h1> Post Lists </h1>")
+    foodInfo ={
+        "foods" : foodData
+    }
+    return render(request,template_name='post/post-list.html',context= foodInfo)
 
 def getHome(request):
-    return render(request , template_name='post/home.html')
+    cohort ={
+         "current_cohort" : "21.2",
+         "cohort_name" : "Romans" 
+          }
+
+    return render(request , template_name='post/home.html', context= cohort)
 
