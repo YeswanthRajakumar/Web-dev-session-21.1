@@ -1,20 +1,28 @@
-### to view installed dependencies
+### Toview installed dependencies
 ```
 pip freeze
 ```
-### to install django
+### To create virtual environment
+```
+python -m venv env
+```
+
+### To install django
 
 ```
 pip install django==3.0.9
 ```
 
+### To create a django project
 ```
-django-admin startproject instagram .
+django-admin startproject project-name .
 ```
 
+### To runserver
 ```
 python manage.py runserver
 ```
+### To create a new app
 
 ```
  python manage.py startapp helloworld
