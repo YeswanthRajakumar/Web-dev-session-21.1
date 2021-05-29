@@ -1,4 +1,4 @@
-### Toview installed dependencies
+### To view installed dependencies
 ```
 pip freeze
 ```
@@ -26,4 +26,4 @@ python manage.py runserver
 
 ```
  python manage.py startapp helloworld
-```
+``
