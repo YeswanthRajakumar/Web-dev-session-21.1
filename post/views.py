@@ -1,18 +1,19 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse
-from foodDB import foodData
+from post.models import PostTable
+
 
 def getPostsList(request):
-    foodInfo ={
-        "foods" : foodData
+    postList = PostTable.objects.all()
+    context ={
+        "postList" : postList
     }
-    return render(request,template_name='post/post-list.html',context= foodInfo)
+    return render(request, template_name='post/post-list.html', context=context)
+
 
 def getHome(request):
-    cohort ={
-         "current_cohort" : "21.2",
-         "cohort_name" : "Romans" 
-          }
+    cohort = {
+        "current_cohort": "21.2",
+        "cohort_name": "Romans"
+    }
 
-    return render(request , template_name='post/home.html', context= cohort)
-
+    return render(request, template_name='post/home.html', context=cohort)
