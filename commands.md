@@ -28,8 +28,26 @@ python manage.py runserver
  python manage.py startapp helloworld
 ````
 
+### to migrate DataBase
+
+```
+py manage.py makemigrations
+py manage.py migrate
+```
+
+
+
+
 ### to create super user
 
 ```
 py manage.py createsuperuser
+```
+
+
+
+### to open Django interactive shell
+
+```
+py manage.py shell
 ```
