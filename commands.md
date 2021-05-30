@@ -26,4 +26,10 @@ python manage.py runserver
 
 ```
  python manage.py startapp helloworld
-``
+````
+
+### to create super user
+
+```
+py manage.py createsuperuser
+```
